@@ -6,7 +6,6 @@ const openKeys = ref(['sub-1'])
 
 function getMenuData() {
   Http.get('/api/menu').then((res) => {
-    console.log(res.data.data)
     menuData.value = res.data.data
   })
 }

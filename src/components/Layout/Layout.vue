@@ -39,6 +39,9 @@
   .wrapper .content {
     width: 85%;
     height: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    overflow-y: auto;
   }
   @media screen and (max-width: 500px) {
     .wrapper .content {

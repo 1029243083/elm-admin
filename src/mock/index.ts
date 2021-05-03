@@ -132,3 +132,41 @@ Mock.mock('/api/menu', () => {
   })
   return meunData
 })
+
+Mock.mock('/api/home/card', () => {
+  const data = Mock.mock({
+    data: [
+      {
+        title: '新增用户',
+        'num|200-900': 200,
+        color: '@color()'
+      },
+      {
+        title: '新增订单',
+        'num|1000-2000': 1000,
+        color: '@color()'
+      },
+      {
+        title: '新增管理员',
+        'num|1-10': 1,
+        color: '@color()'
+      },
+      {
+        title: '注册用户',
+        'num|40000-90000': 40000,
+        color: '@color()'
+      },
+      {
+        title: '订单',
+        'num|10000-99999': 10000,
+        color: '@color()'
+      },
+      {
+        title: '管理员',
+        'num|30000-99999': 30000,
+        color: '@color()'
+      }
+    ]
+  })
+  return data
+})
