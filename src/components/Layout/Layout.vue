@@ -42,6 +42,7 @@
     box-sizing: border-box;
     padding: 0.5rem;
     overflow-y: auto;
+    /* background-color: #222222; */
   }
   @media screen and (max-width: 500px) {
     .wrapper .content {

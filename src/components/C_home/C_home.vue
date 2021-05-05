@@ -47,7 +47,11 @@
                 '<br/>' +
                 params[1].seriesName +
                 ':' +
-                params[1].value
+                params[1].value +
+                '<br />' +
+                params[2].seriesName +
+                ' : ' +
+                params[2].value
               )
             }
           },
@@ -69,7 +73,7 @@
           },
           series: [
             {
-              name: '用户量',
+              name: '注册用户',
               type: 'line',
               data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
               lineStyle: {
@@ -77,9 +81,14 @@
               }
             },
             {
-              name: '用户量',
+              name: '销量',
               type: 'line',
               data: [1.5, 2.9, 3.7, 6.8, 5.1, 6.5, 7.8, 8.9, 9.9, 10.1, 11.8, 12.7]
+            },
+            {
+              name: '新增订单',
+              type: 'line',
+              data: [3.5, 9.9, 7.7, 8.8, 5.1, 6.5, 8.8, 8.9, 10.9, 12.1, 13.8, 14.7]
             }
           ]
         })

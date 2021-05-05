@@ -12,7 +12,7 @@ interface user {
   password: string
   captcha_code: string
 }
-
+// 登录数据
 Mock.mock('/api/login', (config: configType) => {
   const cap = getStorage('cap')
   const obj: user = JSON.parse((config.body as unknown) as string)
@@ -27,6 +27,7 @@ Mock.mock('/api/login', (config: configType) => {
   return null
 })
 
+// 验证码
 Mock.mock('/api/captchas', () => {
   const num = Mock.mock({
     code: '@string("lower", 5)'
@@ -34,6 +35,7 @@ Mock.mock('/api/captchas', () => {
   return num
 })
 
+// 菜单数据
 Mock.mock('/api/menu', () => {
   const meunData = Mock.mock({
     data: [
@@ -133,6 +135,7 @@ Mock.mock('/api/menu', () => {
   return meunData
 })
 
+// 首页卡片数据
 Mock.mock('/api/home/card', () => {
   const data = Mock.mock({
     data: [
@@ -165,6 +168,21 @@ Mock.mock('/api/home/card', () => {
         title: '管理员',
         'num|30000-99999': 30000,
         color: '@color()'
+      }
+    ]
+  })
+  return data
+})
+
+// 获取用户列表
+Mock.mock('/api/home/userlist', () => {
+  const data = Mock.mock({
+    'data|1000': [
+      {
+        name: '@cname',
+        address: '@county(true)',
+        time: '@date',
+        id: '@guid'
       }
     ]
   })
