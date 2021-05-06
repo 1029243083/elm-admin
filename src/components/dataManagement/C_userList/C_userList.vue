@@ -44,8 +44,6 @@
         })
       }
 
-      console.log(userlist)
-
       return {
         userlist,
         columns
