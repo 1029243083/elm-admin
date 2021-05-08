@@ -284,3 +284,22 @@ Mock.mock('/api/home/business', () => {
   })
   return data
 })
+
+Mock.mock('/api/home/foodlist', () => {
+  const data = Mock.mock({
+    'data|100': [
+      {
+        name: '@cword(3)' + '零食',
+        id: '@guid',
+        desc: '@cparagraph(2)',
+        'score|1-10.1': 0,
+        'salesVolume|100-1000': 100,
+        shopName: '@cword(3)' + '测试店',
+        shopId: '@guid',
+        shopAddress: '@county(true)',
+        foodClassify: '@cword(3)' + '分类'
+      }
+    ]
+  })
+  return data
+})
