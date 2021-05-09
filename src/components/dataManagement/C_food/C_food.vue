@@ -1,12 +1,21 @@
 <template>
-  <a-table :data-source="tableDataRef" :columns="columns" bordered row-key="id">
-    <template #action="">
-      <a-button type="primary" ghost>
+  <a-table
+    :data-source="tableDataRef"
+    :columns="columns"
+    bordered
+    row-key="id"
+    @change="pageChange"
+  >
+    <template #action="{ record, index }">
+      <a-button type="primary" ghost @click="edit(record, index)">
         <template #icon><EditOutlined /></template>
       </a-button>
-      <a-button type="danger" ghost>
-        <template #icon><DeleteOutlined /></template>
-      </a-button>
+
+      <a-popconfirm title="是否确认删除" ok-text="Yes" cancel-text="No" @confirm="confirm(index)">
+        <a-button type="danger" ghost>
+          <template #icon><DeleteOutlined /></template>
+        </a-button>
+      </a-popconfirm>
     </template>
     <template #expandedRowRender="{ record }">
       <div class="wrapper">
@@ -51,6 +60,23 @@
       </div>
     </template>
   </a-table>
+  <a-modal v-model:visible="visible" title="食品修改" @ok="handleOk">
+    <a-form :model="formState" :rules="rules">
+      <a-form-item label="食品名称" name="name">
+        <a-input v-model:value="formState.name" />
+      </a-form-item>
+      <a-form-item label="食品介绍" name="desc">
+        <a-input v-model:value="formState.desc" />
+      </a-form-item>
+      <a-form-item label="食品分类" name="foodClassify">
+        <a-select v-model:value="formState.foodClassify" style="width: 12rem">
+          <a-select-option v-for="item in selectOptions" :key="item" :value="item">
+            {{ item }}
+          </a-select-option>
+        </a-select>
+      </a-form-item>
+    </a-form>
+  </a-modal>
 </template>
 
 <script lang="ts">
