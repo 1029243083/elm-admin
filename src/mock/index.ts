@@ -303,3 +303,21 @@ Mock.mock('/api/home/foodlist', () => {
   })
   return data
 })
+
+Mock.mock('/api/orderlist', () => {
+  const data = Mock.mock({
+    'data|100': [
+      {
+        id: '@guid',
+        'price|100-1000': 100,
+        'orderState|0-1': 0,
+        name: '@cname',
+        shopName: '@cword(3)' + '测试店',
+        receivingAddress: '@county(true)',
+        shopId: '@guid',
+        shopAddress: '@county(true)'
+      }
+    ]
+  })
+  return data
+})
