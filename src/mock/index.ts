@@ -321,3 +321,18 @@ Mock.mock('/api/orderlist', () => {
   })
   return data
 })
+
+Mock.mock('/api/adminlist', () => {
+  const data = Mock.mock({
+    'data|100': [
+      {
+        id: '@guid',
+        name: '@cname',
+        cTime: '@date()',
+        address: '@province()',
+        jurisdiction: '管理员'
+      }
+    ]
+  })
+  return data
+})
