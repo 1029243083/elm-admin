@@ -2,7 +2,7 @@
   <a-table :data-source="tableData" :columns="columns" row-key="id">
     <template #expandedRowRender="{ record }">
       <div class="wrapper">
-        <div v-for="item in childrenText" :key="item" class="wrapper-box">
+        <div v-for="item in childrenText" :key="item.key" class="wrapper-box">
           <div class="children-title">{{ item.key }}：</div>
           <div class="text">
             <a-tag color="purple">{{ record[item.value] }}</a-tag>

@@ -9,16 +9,21 @@
 
 <script lang="ts">
   import C_home_card from './C_home_card/C_home_card.vue'
-  import { defineComponent, onMounted, ref } from 'vue'
+  import { defineComponent, onMounted, Ref, ref } from 'vue'
   import * as echarts from 'echarts'
   import Http from '../../Axios/index'
   import Apis from '../../Axios/Apis'
+  interface carDataType {
+    title: string
+    num: number
+    color: string
+  }
   export default defineComponent({
     components: {
       C_home_card
     },
     setup() {
-      const cardData = ref([])
+      const cardData: Ref<carDataType[]> = ref([])
       const echars = ref()
       Http.get(Apis.getHomeCard).then((res) => {
         cardData.value = res.data.data

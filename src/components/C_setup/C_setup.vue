@@ -12,12 +12,16 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref } from 'vue'
+  import { defineComponent, Ref, ref } from 'vue'
   import Http from '../../Axios/index'
   import Apis from '../../Axios/Apis'
+  interface DataType {
+    key: string
+    value: string
+  }
   export default defineComponent({
     setup() {
-      const data = ref([])
+      const data: Ref<DataType[]> = ref([])
 
       Http.get(Apis.adminData).then((res) => {
         console.log(res.data)

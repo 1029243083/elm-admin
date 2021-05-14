@@ -5,6 +5,17 @@ import router from '../../../router/index'
 interface formStateType {
   activity?: number | undefined
   activityDesc?: string
+  name?: string
+  type?: string
+  address?: string
+  phone?: string
+  desc?: string
+  title?: string
+  classify?: string
+  DistributionFee?: string
+  StartingPrice?: string
+  dateStart?: string
+  dateEnd?: string
 }
 
 interface dataSourceType {

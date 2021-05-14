@@ -3,6 +3,13 @@ import { message } from 'ant-design-vue'
 import Router from '../../../router/index'
 interface fromStateType {
   foodName?: string
+  type?: string
+  typeDesc?: string
+  foodActivity?: string
+  foodDesc?: string
+  characteristic?: string
+  PackingFee?: string
+  Price?: string
 }
 
 const formState: Ref<fromStateType> = ref({})
