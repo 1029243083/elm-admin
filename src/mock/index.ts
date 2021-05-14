@@ -336,3 +336,31 @@ Mock.mock('/api/adminlist', () => {
   })
   return data
 })
+
+Mock.mock('/api/adminData', () => {
+  const data = Mock.mock({
+    data: [
+      {
+        key: '姓名：',
+        value: '@cname'
+      },
+      {
+        key: '注册时间：',
+        value: '@date'
+      },
+      {
+        key: '管理员权限：',
+        value: '超级管理员'
+      },
+      {
+        key: '管理员 ID：',
+        value: '@guid'
+      },
+      {
+        key: '头像：',
+        value: Mock.Random.image('100x100', '#50B347', '#FFF', '管理员')
+      }
+    ]
+  })
+  return data
+})

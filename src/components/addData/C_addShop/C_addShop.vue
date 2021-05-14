@@ -29,8 +29,8 @@
         placeholder="请选择"
         style="width: 50rem"
       >
-        <a-select-option value="新品"> </a-select-option>
-        <a-select-option value="招牌"> </a-select-option>
+        <a-select-option value="新品">新品 </a-select-option>
+        <a-select-option value="招牌">招牌 </a-select-option>
       </a-select>
     </a-form-item>
     <a-form-item label="包装费">
